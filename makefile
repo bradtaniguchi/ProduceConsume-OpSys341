@@ -1,8 +1,9 @@
 #Bradley Taniguchi
 
-all: main.o clean
+all: buffer_incomplete.o
 
-main.o: main.c
-	gcc main.c -o main.o
+buffer_incomplete.o: buffer_incomplete.c
+	gcc buffer_incomplete.c -lpthread -o buffer_incomplete.o
 
-clean:
+clean: 
+	rm -f buffer_incomplete.o
