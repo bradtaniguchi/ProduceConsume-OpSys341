@@ -7,6 +7,8 @@
 #include <stdlib.h>
 #include <pthread.h>
 #include <semaphore.h>
+#include <unistd.h>
+
 
 #define TRUE 1
 #define BUFFER_SIZE 5
@@ -47,10 +49,14 @@ int init_buffer(){
 
 int insert_item(int item)
 {
+    return 0; //false
+    return 1;// true, will print error in main
 }
 
 int remove_item()
 {
+    return 0; // false
+    return 1; //true, will print error in main
 }
 
 int main(int argc, char *argv[])
@@ -113,7 +119,7 @@ void *producer(void *param)
 		random = myRand();
 		current_time+=r;
 
-		printf("Producer tries to insert %d at time %d\n", random, current_time); 
+		printf("Producer tries to insert %d at time %d id: %d\n", random, current_time, getpid()); 
 		if(insert_item(random))
 			fprintf(stderr, "Error");
 
@@ -132,7 +138,8 @@ void *consumer(void *param)
 		sleep(r);
 		current_time+=r;
 		
-		printf("Consumer tries to consume at time %d\n", current_time, random); 
+//		printf("Consumer tries to consume %d at time %d\n", current_time, random); //error??
+        printf("Consumer tries to consume at time %d id: %d\n", current_time, getpid());		
 
 		if(remove_item())
 			fprintf(stderr, "Error Consuming");
