@@ -19,7 +19,7 @@
 
 int buffer[BUFFER_SIZE];
 
-pthread_mutex_t mutex;
+pthread_mutex_t mutex; //THIS IS THE MUTEXT LOCK that protects the critical section
 sem_t empty;
 sem_t full;
 
@@ -48,13 +48,17 @@ int init_buffer(){
 }
 
 int insert_item(int item)
-{
+{ 
+    //check critical section
+    pthread_mutex_lock(&mutex);//check the lock
     return 0; //false
     return 1;// true, will print error in main
 }
 
 int remove_item()
 {
+    //check critical section
+    pthread_mutex_lock(&mutex);//check the lock
     return 0; // false
     return 1; //true, will print error in main
 }
