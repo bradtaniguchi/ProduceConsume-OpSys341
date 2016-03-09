@@ -51,6 +51,9 @@ int insert_item(int item)
 { 
     //check critical section
     pthread_mutex_lock(&mutex);//check the lock
+    buffer[insertPointer] = item;
+    insertPointer++;
+    pthread_mutex_unlock(&mutex);
     return 0; //false
     return 1;// true, will print error in main
 }
@@ -59,6 +62,8 @@ int remove_item()
 {
     //check critical section
     pthread_mutex_lock(&mutex);//check the lock
+    removePointer++; //increment removePointer
+    pthread_mutex_unlock(&mutex);
     return 0; // false
     return 1; //true, will print error in main
 }
