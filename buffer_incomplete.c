@@ -20,9 +20,10 @@
 int buffer[BUFFER_SIZE];
 
 pthread_mutex_t mutex; //THIS IS THE MUTEXT LOCK that protects the critical section
-sem_t empty;
+sem_t empty; //using this semaphore to protect the different parts of the buffer
 sem_t full;
-
+//semaphoreWait, SemaphoreSignal
+//
 int insertPointer = 0, removePointer = 0;
 
 void *producer(void *param);
@@ -48,26 +49,29 @@ int init_buffer(){
 }
 
 int insert_item(int item)
-{ 
+{
+    
     //check critical section
-    pthread_mutex_lock(&mutex);//check the lock
+    sem_wait(&full); //down semaphore
+    printf("In Critical Section");
+    insertPointer++; //increament pointer
     buffer[insertPointer] = item;
-    insertPointer++;
-    pthread_mutex_unlock(&mutex);
+    sem_post(&full); //unlocks semaphore?
     return 0; //false
-    return 1;// true, will print error in main
+//    return 1;// true, will print error in main
+    
 }
 
 int remove_item()
 {
     //check critical section
-    pthread_mutex_lock(&mutex);//check the lock
-    removePointer++; //increment removePointer
-    pthread_mutex_unlock(&mutex);
+    int ret;
+    sem_wait(&empty);//down semaphore
+    buffer[insertPointer] = -1; //consume data
+    insertPointer++;
+    sem_post(&empty);
     return 0; // false
-    return 1; //true, will print error in main
 }
-
 int main(int argc, char *argv[])
 {
 	int sleepTime, producerThreads, consumerThreads;
@@ -88,8 +92,8 @@ int main(int argc, char *argv[])
 
 	/* Initialize the synchronization tools */
 	printf("%d\n",pthread_mutex_init(&mutex, NULL));
-	printf("%d\n",sem_init(&empty, 0, BUFFER_SIZE));
-	printf("%d\n",sem_init(&full, 0, 0));
+	printf("%d\n",sem_init(&empty, 0, BUFFER_SIZE)); //sem_init empty is size of BUFFER so 5
+	printf("%d\n",sem_init(&full, 0, 0)); //none are full
 	srand(time(0));
 
 	/* Create the producer and consumer threads */
@@ -128,7 +132,7 @@ void *producer(void *param)
 		random = myRand();
 		current_time+=r;
 
-		printf("Producer tries to insert %d at time %d id: %d\n", random, current_time, getpid()); 
+		printf("Producer tries to insert %d at time %d\n", random, current_time); 
 		if(insert_item(random))
 			fprintf(stderr, "Error");
 
@@ -148,7 +152,7 @@ void *consumer(void *param)
 		current_time+=r;
 		
 //		printf("Consumer tries to consume %d at time %d\n", current_time, random); //error??
-        printf("Consumer tries to consume at time %d id: %d\n", current_time, getpid());		
+        printf("Consumer tries to consume at time %d\n", current_time);		
 
 		if(remove_item())
 			fprintf(stderr, "Error Consuming");
