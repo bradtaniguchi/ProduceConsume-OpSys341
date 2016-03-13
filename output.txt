@@ -1,80 +1,80 @@
 0
 0
 0
-Consumer tries to consume at time 0
-Consumer tries to consume at time 0
-Consumer tries to consume at time 0
-Producer tries to insert 689 at time 1
-Producer produced 689
-slot 0: 689
+Consumer 140573614376704 tries to consume at time 1
+Consumer 140573589198592 tries to consume at time 1
+Consumer 140573605984000 tries to consume at time 1
+Producer 140573639554816 tries to insert 929 at time 3
+Producer produced 929
+slot 0: 929
 slot 1: -1
 slot 2: -1
 slot 3: -1
 slot 4: -1
 
-Consumer consumed 689
-slot 0: -1
-slot 1: -1
-slot 2: -1
-slot 3: -1
-slot 4: -1
-
-Consumer tries to consume at time 1
-Producer tries to insert 521 at time 2
-Producer produced 521
-slot 0: -1
-slot 1: 521
-slot 2: -1
-slot 3: -1
-slot 4: -1
-
-Producer tries to insert 922 at time 2
-Producer produced 922
-slot 0: -1
-slot 1: 521
-slot 2: 922
-slot 3: -1
-slot 4: -1
-
-Consumer consumed 521
-slot 0: -1
-slot 1: -1
-slot 2: 922
-slot 3: -1
-slot 4: -1
-
-Consumer tries to consume at time 2
-Consumer consumed 922
+Consumer consumed 929
 slot 0: -1
 slot 1: -1
 slot 2: -1
 slot 3: -1
 slot 4: -1
 
-Producer tries to insert 525 at time 4
-Producer produced 525
+Consumer 140573597591296 tries to consume at time 3
+Producer 140573656340224 tries to insert 594 at time 4
+Producer 140573647947520 tries to insert 436 at time 4
+Producer produced 436
 slot 0: -1
-slot 1: -1
+slot 1: 436
 slot 2: -1
-slot 3: 525
+slot 3: -1
 slot 4: -1
 
-Producer tries to insert 148 at time 4
-Producer produced 148
+Producer produced 594
+slot 0: -1
+slot 1: 436
+slot 2: 594
+slot 3: -1
+slot 4: -1
+Producer 140573631162112 tries to insert 560 at time 4
+Producer 140573622769408 tries to insert 604 at time 4
+
+Producer produced 604
+slot 0: -1
+slot 1: 436
+slot 2: 594
+slot 3: 604
+slot 4: -1
+
+Producer produced 560
+slot 0: -1
+slot 1: 436
+slot 2: 594
+slot 3: 604
+slot 4: 560
+
+Consumer 140573580805888 tries to consume at time 4
+Consumer consumed 436
+slot 0: -1
+slot 1: -1
+slot 2: 594
+slot 3: 604
+slot 4: 560
+
+Consumer consumed 594
 slot 0: -1
 slot 1: -1
 slot 2: -1
-slot 3: 525
-slot 4: 148
+slot 3: 604
+slot 4: 560
 
-Consumer consumed 525
+Consumer consumed 604
 slot 0: -1
 slot 1: -1
 slot 2: -1
 slot 3: -1
-slot 4: 148
+slot 4: 560
 
-Consumer consumed 148
+Consumer consumed 560
 slot 0: -1
 slot 1: -1
 slot 2: -1

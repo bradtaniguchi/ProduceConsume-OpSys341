@@ -19,11 +19,10 @@
 
 int buffer[BUFFER_SIZE];
 
-pthread_mutex_t mutex; //THIS IS THE MUTEXT LOCK that protects the critical section
-sem_t empty; //using this semaphore to protect the different parts of the buffer
+pthread_mutex_t mutex; 
+sem_t empty; 
 sem_t full;
-//semaphoreWait, SemaphoreSignal
-//
+
 int insertPointer = 0, removePointer = 0;
 
 void *producer(void *param);
@@ -57,9 +56,9 @@ int insert_item(int item)
     pthread_mutex_lock(&mutex);
 
     /* CRITICAL SECTION */
-    buffer[insertPointer] = item; // Insert item
-    printf("Producer produced %d\n", buffer[insertPointer]);
-    insertPointer = (insertPointer+1) % BUFFER_SIZE; // Circular array
+    buffer[insertPointer] = item; 
+    printf("Producer %lu produced %d\n", pthread_self(), buffer[insertPointer]);
+    insertPointer = (insertPointer+1) % BUFFER_SIZE; 
     
     /* Print the buffer */
     print_buffer();
@@ -82,9 +81,9 @@ int remove_item()
     pthread_mutex_lock(&mutex);
 
     /* CRITICAL SECTION */
-    printf("Consumer consumed %d\n", buffer[removePointer]);
-    buffer[removePointer] = -1; // -1 indicates empty space
-    removePointer = (removePointer+1) % BUFFER_SIZE; // Circular array
+    printf("Consumer %lu consumed %d\n", pthread_self(), buffer[removePointer]);
+    buffer[removePointer] = -1; 
+    removePointer = (removePointer+1) % BUFFER_SIZE; 
 
     /* Print the buffer */
     print_buffer();
@@ -159,7 +158,8 @@ void *producer(void *param)
 		random = myRand();
 		current_time+=r;
 
-		printf("Producer tries to insert %d at time %d\n", random, current_time); 
+		printf("Producer %lu tries to insert %d at time %d\n", \
+            pthread_self(), random, current_time); 
 		if(insert_item(random))
 			fprintf(stderr, "Error");
 	}
@@ -177,7 +177,8 @@ void *consumer(void *param)
 		sleep(r);
 		current_time+=r;
 		
-		printf("Consumer tries to consume at time %d\n", current_time); 
+		printf("Consumer %lu tries to consume at time %d\n", pthread_self(), \
+             current_time); 
 		if(remove_item())
 			fprintf(stderr, "Error Consuming");
 	}
