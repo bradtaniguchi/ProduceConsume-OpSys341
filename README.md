@@ -1,9 +1,22 @@
 # ProduceConsume-OpSys341
 
+<<<<<<< HEAD
 Brad Taniguchi  
 Matt Levan  
 CSC341 Operating Systems  
 Dr. Bin Tang  
+=======
+####Instructions
+1. compile with `make` or `gcc buffer_incomplete.c -lpthread -o buffer_incomplete.o`
+2. run with `./buffer_incomplete.o <arguments>`
+
+####ScreenShots
+to be added...
+
+
+####Files
+to be added....
+>>>>>>> 4ed899a00ef2c13651924341f924d9352472b5d1
 
 ### Prompt
 Producer Consumer Problem, page 253.

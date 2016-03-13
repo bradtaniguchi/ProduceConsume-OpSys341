@@ -1,0 +1,83 @@
+0
+0
+0
+Consumer tries to consume at time 0
+Consumer tries to consume at time 0
+Consumer tries to consume at time 0
+Producer tries to insert 689 at time 1
+Producer produced 689
+slot 0: 689
+slot 1: -1
+slot 2: -1
+slot 3: -1
+slot 4: -1
+
+Consumer consumed 689
+slot 0: -1
+slot 1: -1
+slot 2: -1
+slot 3: -1
+slot 4: -1
+
+Consumer tries to consume at time 1
+Producer tries to insert 521 at time 2
+Producer produced 521
+slot 0: -1
+slot 1: 521
+slot 2: -1
+slot 3: -1
+slot 4: -1
+
+Producer tries to insert 922 at time 2
+Producer produced 922
+slot 0: -1
+slot 1: 521
+slot 2: 922
+slot 3: -1
+slot 4: -1
+
+Consumer consumed 521
+slot 0: -1
+slot 1: -1
+slot 2: 922
+slot 3: -1
+slot 4: -1
+
+Consumer tries to consume at time 2
+Consumer consumed 922
+slot 0: -1
+slot 1: -1
+slot 2: -1
+slot 3: -1
+slot 4: -1
+
+Producer tries to insert 525 at time 4
+Producer produced 525
+slot 0: -1
+slot 1: -1
+slot 2: -1
+slot 3: 525
+slot 4: -1
+
+Producer tries to insert 148 at time 4
+Producer produced 148
+slot 0: -1
+slot 1: -1
+slot 2: -1
+slot 3: 525
+slot 4: 148
+
+Consumer consumed 525
+slot 0: -1
+slot 1: -1
+slot 2: -1
+slot 3: -1
+slot 4: 148
+
+Consumer consumed 148
+slot 0: -1
+slot 1: -1
+slot 2: -1
+slot 3: -1
+slot 4: -1
+

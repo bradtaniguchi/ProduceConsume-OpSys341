@@ -7,6 +7,8 @@
 #include <stdlib.h>
 #include <pthread.h>
 #include <semaphore.h>
+#include <unistd.h>
+
 
 #define TRUE 1
 #define BUFFER_SIZE 5
@@ -17,10 +19,11 @@
 
 int buffer[BUFFER_SIZE];
 
-pthread_mutex_t mutex;
-sem_t empty;
+pthread_mutex_t mutex; //THIS IS THE MUTEXT LOCK that protects the critical section
+sem_t empty; //using this semaphore to protect the different parts of the buffer
 sem_t full;
-
+//semaphoreWait, SemaphoreSignal
+//
 int insertPointer = 0, removePointer = 0;
 
 void *producer(void *param);
@@ -67,7 +70,7 @@ int insert_item(int item)
     /* Post to full semaphore */
     sem_post(&full);
     
-    sleep(10);
+    sleep(50);
 }
 
 int remove_item()
@@ -92,7 +95,7 @@ int remove_item()
     /* Post to empty semaphore */
     sem_post(&empty);
 
-    sleep(10);
+    sleep(50);
 }
 
 int main(int argc, char *argv[])
@@ -115,8 +118,8 @@ int main(int argc, char *argv[])
 
 	/* Initialize the synchronization tools */
 	printf("%d\n",pthread_mutex_init(&mutex, NULL));
-	printf("%d\n",sem_init(&empty, 0, BUFFER_SIZE));
-	printf("%d\n",sem_init(&full, 0, 0));
+	printf("%d\n",sem_init(&empty, 0, BUFFER_SIZE)); 
+	printf("%d\n",sem_init(&full, 0, 0)); 
 	srand(time(0));
 
 	/* Create the producer and consumer threads */
@@ -138,6 +141,7 @@ int main(int argc, char *argv[])
 
 	/* Sleep for user specified time */
 	sleep(sleepTime);
+
 	return 0;
 }
 
@@ -174,7 +178,6 @@ void *consumer(void *param)
 		current_time+=r;
 		
 		printf("Consumer tries to consume at time %d\n", current_time); 
-
 		if(remove_item())
 			fprintf(stderr, "Error Consuming");
 	}
