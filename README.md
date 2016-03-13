@@ -6,16 +6,17 @@ CSC341 Operating Systems
 Dr. Bin Tang  
 
 =======
-####Instructions
-1. compile with `make` or `gcc buffer_incomplete.c -lpthread -o buffer_incomplete.o`
+
+#### Instructions
+1. compile with `gcc buffer_incomplete.c -lpthread -o buffer_incomplete.o`
 2. run with `./buffer_incomplete.o <arguments>`
 
-####ScreenShots
+#### ScreenShots
 
-####Files
+#### Files
 to be added....
 
-### Prompt
+#### Prompt
 Producer Consumer Problem, page 253.
 
 An incomplete program, called `buffer_incomplete.c` is given. Your job is 
