@@ -8,7 +8,7 @@
 #include <pthread.h>
 #include <semaphore.h>
 #include <unistd.h>
-
+#include <time.h>
 
 #define TRUE 1
 #define BUFFER_SIZE 5
@@ -22,6 +22,8 @@ int buffer[BUFFER_SIZE];
 pthread_mutex_t mutex; 
 sem_t empty; 
 sem_t full;
+
+time_t my_time;
 
 int insertPointer = 0, removePointer = 0;
 
@@ -57,7 +59,9 @@ int insert_item(int item)
 
     /* CRITICAL SECTION */
     buffer[insertPointer] = item; 
-    printf("Producer %lu produced %d\n", pthread_self(), buffer[insertPointer]);
+    my_time = time(NULL);
+    printf("Producer %lu produced %d at time %s\n", pthread_self(), \
+        buffer[insertPointer], ctime(&my_time));
     insertPointer = (insertPointer+1) % BUFFER_SIZE; 
     
     /* Print the buffer */
@@ -68,8 +72,6 @@ int insert_item(int item)
 
     /* Post to full semaphore */
     sem_post(&full);
-    
-    sleep(50);
 }
 
 int remove_item()
@@ -81,7 +83,9 @@ int remove_item()
     pthread_mutex_lock(&mutex);
 
     /* CRITICAL SECTION */
-    printf("Consumer %lu consumed %d\n", pthread_self(), buffer[removePointer]);
+    my_time = time(NULL);
+    printf("Consumer %lu consumed %d at time %s\n", pthread_self(), \
+        buffer[removePointer], ctime(&my_time));
     buffer[removePointer] = -1; 
     removePointer = (removePointer+1) % BUFFER_SIZE; 
 
@@ -93,18 +97,18 @@ int remove_item()
     
     /* Post to empty semaphore */
     sem_post(&empty);
-
-    sleep(50);
 }
 
 int main(int argc, char *argv[])
 {
 	int sleepTime, producerThreads, consumerThreads;
 	int i, j;
+    my_time = time(NULL);
 
 	if(argc != 4)
 	{
-		fprintf(stderr, "Useage: <sleep time> <producer threads> <consumer threads>\n");
+		fprintf(stderr, "Useage: <sleep time> <producer threads> \
+                <consumer threads>\n");
 		return -1;
 	}
 
@@ -157,9 +161,11 @@ void *producer(void *param)
 		sleep(r);
 		random = myRand();
 		current_time+=r;
+  
+        my_time = time(NULL);
 
-		printf("Producer %lu tries to insert %d at time %d\n", \
-            pthread_self(), random, current_time); 
+		printf("Producer %lu tries to insert %d at time %s\n", \
+            pthread_self(), random, ctime(&my_time)); 
 		if(insert_item(random))
 			fprintf(stderr, "Error");
 	}
@@ -176,9 +182,11 @@ void *consumer(void *param)
 		r = rand() % MAX_SLEEP;
 		sleep(r);
 		current_time+=r;
-		
-		printf("Consumer %lu tries to consume at time %d\n", pthread_self(), \
-             current_time); 
+	
+        my_time = time(NULL);
+
+		printf("Consumer %lu tries to consume at time %s\n", pthread_self(), \
+             ctime(&my_time)); 
 		if(remove_item())
 			fprintf(stderr, "Error Consuming");
 	}

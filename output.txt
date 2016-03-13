@@ -1,83 +1,383 @@
 0
 0
 0
-Consumer 140573614376704 tries to consume at time 1
-Consumer 140573589198592 tries to consume at time 1
-Consumer 140573605984000 tries to consume at time 1
-Producer 140573639554816 tries to insert 929 at time 3
-Producer produced 929
-slot 0: 929
+Consumer 139627881285376 tries to consume at time Sun Mar 13 13:18:18 2016
+
+Consumer 139627872892672 tries to consume at time Sun Mar 13 13:18:18 2016
+
+Consumer 139627721889536 tries to consume at time Sun Mar 13 13:18:18 2016
+
+Consumer 139627856107264 tries to consume at time Sun Mar 13 13:18:19 2016
+
+Producer 139627923248896 tries to insert 445 at time Sun Mar 13 13:18:21 2016
+
+Producer 139627906463488 tries to insert 883 at time Sun Mar 13 13:18:21 2016
+
+Producer 139627898070784 tries to insert 760 at time Sun Mar 13 13:18:21 2016
+
+Producer 139627889678080 tries to insert 72 at time Sun Mar 13 13:18:21 2016
+
+Producer 139627923248896 produced 445 at time Sun Mar 13 13:18:21 2016
+
+slot 0: 445
 slot 1: -1
 slot 2: -1
 slot 3: -1
 slot 4: -1
 
-Consumer consumed 929
+Producer 139627923248896 tries to insert 256 at time Sun Mar 13 13:18:21 2016
+
+Producer 139627914856192 tries to insert 59 at time Sun Mar 13 13:18:21 2016
+
+Producer 139627906463488 produced 883 at time Sun Mar 13 13:18:21 2016
+
+slot 0: 445
+slot 1: 883
+slot 2: -1
+slot 3: -1
+slot 4: -1
+
+Producer 139627906463488 tries to insert 178 at time Sun Mar 13 13:18:21 2016
+
+Producer 139627898070784 produced 760 at time Sun Mar 13 13:18:21 2016
+
+slot 0: 445
+slot 1: 883
+slot 2: 760
+slot 3: -1
+slot 4: -1
+
+Consumer 139627721889536 consumed 445 at time Sun Mar 13 13:18:21 2016
+
+slot 0: -1
+slot 1: 883
+slot 2: 760
+slot 3: -1
+slot 4: -1
+
+Consumer 139627721889536 tries to consume at time Sun Mar 13 13:18:21 2016
+
+Consumer 139627881285376 consumed 883 at time Sun Mar 13 13:18:21 2016
+
+slot 0: -1
+slot 1: -1
+slot 2: 760
+slot 3: -1
+slot 4: -1
+
+Producer 139627923248896 produced 256 at time Sun Mar 13 13:18:21 2016
+
+slot 0: -1
+slot 1: -1
+slot 2: 760
+slot 3: 256
+slot 4: -1
+
+Consumer 139627872892672 consumed 760 at time Sun Mar 13 13:18:21 2016
+
+slot 0: -1
+slot 1: -1
+slot 2: -1
+slot 3: 256
+slot 4: -1
+
+Producer 139627889678080 produced 72 at time Sun Mar 13 13:18:21 2016
+
+slot 0: -1
+slot 1: -1
+slot 2: -1
+slot 3: 256
+slot 4: 72
+
+Producer 139627914856192 produced 59 at time Sun Mar 13 13:18:21 2016
+
+slot 0: 59
+slot 1: -1
+slot 2: -1
+slot 3: 256
+slot 4: 72
+
+Producer 139627906463488 produced 178 at time Sun Mar 13 13:18:21 2016
+
+slot 0: 59
+slot 1: 178
+slot 2: -1
+slot 3: 256
+slot 4: 72
+
+Consumer 139627856107264 consumed 256 at time Sun Mar 13 13:18:21 2016
+
+slot 0: 59
+slot 1: 178
+slot 2: -1
+slot 3: -1
+slot 4: 72
+
+Consumer 139627721889536 consumed 72 at time Sun Mar 13 13:18:21 2016
+
+slot 0: 59
+slot 1: 178
+slot 2: -1
+slot 3: -1
+slot 4: -1
+
+Consumer 139627864499968 tries to consume at time Sun Mar 13 13:18:22 2016
+
+Consumer 139627864499968 consumed 59 at time Sun Mar 13 13:18:22 2016
+
+slot 0: -1
+slot 1: 178
+slot 2: -1
+slot 3: -1
+slot 4: -1
+
+Consumer 139627864499968 tries to consume at time Sun Mar 13 13:18:22 2016
+
+Consumer 139627864499968 consumed 178 at time Sun Mar 13 13:18:22 2016
+
 slot 0: -1
 slot 1: -1
 slot 2: -1
 slot 3: -1
 slot 4: -1
 
-Consumer 140573597591296 tries to consume at time 3
-Producer 140573656340224 tries to insert 594 at time 4
-Producer 140573647947520 tries to insert 436 at time 4
-Producer produced 436
+Producer 139627906463488 tries to insert 680 at time Sun Mar 13 13:18:22 2016
+
+Producer 139627906463488 produced 680 at time Sun Mar 13 13:18:22 2016
+
 slot 0: -1
-slot 1: 436
-slot 2: -1
+slot 1: -1
+slot 2: 680
 slot 3: -1
 slot 4: -1
 
-Producer produced 594
-slot 0: -1
-slot 1: 436
-slot 2: 594
-slot 3: -1
-slot 4: -1
-Producer 140573631162112 tries to insert 560 at time 4
-Producer 140573622769408 tries to insert 604 at time 4
+Consumer 139627872892672 tries to consume at time Sun Mar 13 13:18:23 2016
 
-Producer produced 604
-slot 0: -1
-slot 1: 436
-slot 2: 594
-slot 3: 604
-slot 4: -1
+Producer 139627923248896 tries to insert 89 at time Sun Mar 13 13:18:23 2016
 
-Producer produced 560
-slot 0: -1
-slot 1: 436
-slot 2: 594
-slot 3: 604
-slot 4: 560
+Consumer 139627872892672 consumed 680 at time Sun Mar 13 13:18:23 2016
 
-Consumer 140573580805888 tries to consume at time 4
-Consumer consumed 436
-slot 0: -1
-slot 1: -1
-slot 2: 594
-slot 3: 604
-slot 4: 560
-
-Consumer consumed 594
-slot 0: -1
-slot 1: -1
-slot 2: -1
-slot 3: 604
-slot 4: 560
-
-Consumer consumed 604
-slot 0: -1
-slot 1: -1
-slot 2: -1
-slot 3: -1
-slot 4: 560
-
-Consumer consumed 560
 slot 0: -1
 slot 1: -1
 slot 2: -1
 slot 3: -1
 slot 4: -1
+
+Consumer 139627856107264 tries to consume at time Sun Mar 13 13:18:23 2016
+
+Producer 139627914856192 tries to insert 726 at time Sun Mar 13 13:18:23 2016
+
+Producer 139627923248896 produced 89 at time Sun Mar 13 13:18:23 2016
+
+slot 0: -1
+slot 1: -1
+slot 2: -1
+slot 3: 89
+slot 4: -1
+
+Producer 139627914856192 produced 726 at time Sun Mar 13 13:18:23 2016
+
+slot 0: -1
+slot 1: -1
+slot 2: -1
+slot 3: 89
+slot 4: 726
+
+Consumer 139627856107264 consumed 89 at time Sun Mar 13 13:18:23 2016
+
+slot 0: -1
+slot 1: -1
+slot 2: -1
+slot 3: -1
+slot 4: 726
+
+Producer 139627898070784 tries to insert 988 at time Sun Mar 13 13:18:24 2016
+
+Producer 139627898070784 produced 988 at time Sun Mar 13 13:18:24 2016
+
+slot 0: 988
+slot 1: -1
+slot 2: -1
+slot 3: -1
+slot 4: 726
+
+Producer 139627889678080 tries to insert 446 at time Sun Mar 13 13:18:24 2016
+
+Producer 139627889678080 produced 446 at time Sun Mar 13 13:18:24 2016
+
+slot 0: 988
+slot 1: 446
+slot 2: -1
+slot 3: -1
+slot 4: 726
+
+Consumer 139627721889536 tries to consume at time Sun Mar 13 13:18:24 2016
+
+Consumer 139627721889536 consumed 726 at time Sun Mar 13 13:18:24 2016
+
+slot 0: 988
+slot 1: 446
+slot 2: -1
+slot 3: -1
+slot 4: -1
+
+Producer 139627914856192 tries to insert 518 at time Sun Mar 13 13:18:24 2016
+
+Producer 139627914856192 produced 518 at time Sun Mar 13 13:18:24 2016
+
+slot 0: 988
+slot 1: 446
+slot 2: 518
+slot 3: -1
+slot 4: -1
+
+Producer 139627914856192 tries to insert 868 at time Sun Mar 13 13:18:24 2016
+
+Producer 139627914856192 produced 868 at time Sun Mar 13 13:18:24 2016
+
+slot 0: 988
+slot 1: 446
+slot 2: 518
+slot 3: 868
+slot 4: -1
+
+Consumer 139627864499968 tries to consume at time Sun Mar 13 13:18:25 2016
+
+Consumer 139627864499968 consumed 988 at time Sun Mar 13 13:18:25 2016
+
+slot 0: -1
+slot 1: 446
+slot 2: 518
+slot 3: 868
+slot 4: -1
+
+Consumer 139627864499968 tries to consume at time Sun Mar 13 13:18:25 2016
+
+Consumer 139627864499968 consumed 446 at time Sun Mar 13 13:18:25 2016
+
+slot 0: -1
+slot 1: -1
+slot 2: 518
+slot 3: 868
+slot 4: -1
+
+Consumer 139627881285376 tries to consume at time Sun Mar 13 13:18:25 2016
+
+Consumer 139627881285376 consumed 518 at time Sun Mar 13 13:18:25 2016
+
+slot 0: -1
+slot 1: -1
+slot 2: -1
+slot 3: 868
+slot 4: -1
+
+Consumer 139627872892672 tries to consume at time Sun Mar 13 13:18:25 2016
+
+Consumer 139627872892672 consumed 868 at time Sun Mar 13 13:18:25 2016
+
+slot 0: -1
+slot 1: -1
+slot 2: -1
+slot 3: -1
+slot 4: -1
+
+Producer 139627914856192 tries to insert 405 at time Sun Mar 13 13:18:25 2016
+
+Producer 139627914856192 produced 405 at time Sun Mar 13 13:18:25 2016
+
+slot 0: -1
+slot 1: -1
+slot 2: -1
+slot 3: -1
+slot 4: 405
+
+Producer 139627906463488 tries to insert 323 at time Sun Mar 13 13:18:26 2016
+
+Producer 139627906463488 produced 323 at time Sun Mar 13 13:18:26 2016
+
+slot 0: 323
+slot 1: -1
+slot 2: -1
+slot 3: -1
+slot 4: 405
+
+Producer 139627923248896 tries to insert 502 at time Sun Mar 13 13:18:26 2016
+
+Producer 139627923248896 produced 502 at time Sun Mar 13 13:18:26 2016
+
+slot 0: 323
+slot 1: 502
+slot 2: -1
+slot 3: -1
+slot 4: 405
+
+Consumer 139627856107264 tries to consume at time Sun Mar 13 13:18:26 2016
+
+Consumer 139627856107264 consumed 405 at time Sun Mar 13 13:18:26 2016
+
+slot 0: 323
+slot 1: 502
+slot 2: -1
+slot 3: -1
+slot 4: -1
+
+Consumer 139627864499968 tries to consume at time Sun Mar 13 13:18:27 2016
+
+Consumer 139627864499968 consumed 323 at time Sun Mar 13 13:18:27 2016
+
+slot 0: -1
+slot 1: 502
+slot 2: -1
+slot 3: -1
+slot 4: -1
+
+Consumer 139627881285376 tries to consume at time Sun Mar 13 13:18:27 2016
+
+Consumer 139627881285376 consumed 502 at time Sun Mar 13 13:18:27 2016
+
+slot 0: -1
+slot 1: -1
+slot 2: -1
+slot 3: -1
+slot 4: -1
+
+Producer 139627889678080 tries to insert 721 at time Sun Mar 13 13:18:27 2016
+
+Producer 139627889678080 produced 721 at time Sun Mar 13 13:18:27 2016
+
+slot 0: -1
+slot 1: -1
+slot 2: 721
+slot 3: -1
+slot 4: -1
+
+Consumer 139627872892672 tries to consume at time Sun Mar 13 13:18:27 2016
+
+Consumer 139627872892672 consumed 721 at time Sun Mar 13 13:18:27 2016
+
+slot 0: -1
+slot 1: -1
+slot 2: -1
+slot 3: -1
+slot 4: -1
+
+Producer 139627906463488 tries to insert 501 at time Sun Mar 13 13:18:27 2016
+
+Producer 139627906463488 produced 501 at time Sun Mar 13 13:18:27 2016
+
+slot 0: -1
+slot 1: -1
+slot 2: -1
+slot 3: 501
+slot 4: -1
+
+Producer 139627906463488 tries to insert 218 at time Sun Mar 13 13:18:27 2016
+
+Producer 139627906463488 produced 218 at time Sun Mar 13 13:18:27 2016
+
+slot 0: -1
+slot 1: -1
+slot 2: -1
+slot 3: 501
+slot 4: 218
 
