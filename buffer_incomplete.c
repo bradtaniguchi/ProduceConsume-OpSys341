@@ -47,10 +47,52 @@ int init_buffer(){
 
 int insert_item(int item)
 {
+    /* Wait for there to be at least one empty spot */
+    sem_wait(&empty);
+
+    /* Lock the mutex */
+    pthread_mutex_lock(&mutex);
+
+    /* CRITICAL SECTION */
+    buffer[insertPointer] = item; // Insert item
+    printf("Producer produced %d\n", buffer[insertPointer]);
+    insertPointer = (insertPointer+1) % BUFFER_SIZE; // Circular array
+    
+    /* Print the buffer */
+    print_buffer();
+
+    /* Unlock the mutex */
+    pthread_mutex_unlock(&mutex);
+
+    /* Post to full semaphore */
+    sem_post(&full);
+    
+    sleep(10);
 }
 
 int remove_item()
 {
+    /* Wait for there to be at least one empty spot */
+    sem_wait(&full);
+
+    /* Lock the mutex */
+    pthread_mutex_lock(&mutex);
+
+    /* CRITICAL SECTION */
+    printf("Consumer consumed %d\n", buffer[removePointer]);
+    buffer[removePointer] = -1; // -1 indicates empty space
+    removePointer = (removePointer+1) % BUFFER_SIZE; // Circular array
+
+    /* Print the buffer */
+    print_buffer();
+    
+    /* Unlock the mutex */
+    pthread_mutex_unlock(&mutex);
+    
+    /* Post to empty semaphore */
+    sem_post(&empty);
+
+    sleep(10);
 }
 
 int main(int argc, char *argv[])
@@ -116,7 +158,6 @@ void *producer(void *param)
 		printf("Producer tries to insert %d at time %d\n", random, current_time); 
 		if(insert_item(random))
 			fprintf(stderr, "Error");
-
 	}
 
 }
@@ -132,7 +173,7 @@ void *consumer(void *param)
 		sleep(r);
 		current_time+=r;
 		
-		printf("Consumer tries to consume at time %d\n", current_time, random); 
+		printf("Consumer tries to consume at time %d\n", current_time); 
 
 		if(remove_item())
 			fprintf(stderr, "Error Consuming");
