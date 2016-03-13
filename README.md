@@ -1,6 +1,5 @@
 # ProduceConsume-OpSys341
 
-<<<<<<< HEAD
 Brad Taniguchi  
 Matt Levan  
 CSC341 Operating Systems  
@@ -16,7 +15,6 @@ to be added...
 
 ####Files
 to be added....
->>>>>>> 4ed899a00ef2c13651924341f924d9352472b5d1
 
 ### Prompt
 Producer Consumer Problem, page 253.
