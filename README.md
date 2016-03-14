@@ -8,17 +8,17 @@ Dr. Bin Tang
 ---
 
 #### Instructions
-1. compile with `gcc buffer.c -pthread -o buffer.o`
-2. run with `./buffer.o <sleep time> <producer threads> <consumer threads>` 
-    EX './buffer.o 20 5 5'
+1. compile with `gcc buffer.c -pthread -o buffer.o`  
+2. run with `./buffer.o <sleep time> <producer threads> <consumer threads>`  
+    EX './buffer.o 20 5 5'  
 
 #### Contribution
 Matt Levan 
-    - Primary and final draft of insert\_item() and remove\_item()
-    - README prompt
-Bradley Taniguchi 
-    - First draft of insert\_item() and remove\_item()
-    - git repo
+    - Primary and final draft of insert\_item() and remove\_item()  
+    - README prompt  
+Bradley Taniguchi   
+    - First draft of insert\_item() and remove\_item()  
+    - git repo  
 
 #### Observations
 to be added...
