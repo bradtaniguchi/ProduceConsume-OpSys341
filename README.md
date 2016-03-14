@@ -5,16 +5,23 @@ Matt Levan
 CSC341 Operating Systems  
 Dr. Bin Tang  
 
-=======
+---
 
 #### Instructions
-1. compile with `gcc buffer_incomplete.c -lpthread -o buffer_incomplete.o`
-2. run with `./buffer_incomplete.o <arguments>`
+1. compile with `gcc buffer.c -pthread -o buffer.o`
+2. run with `./buffer.o <sleep time> <producer threads> <consumer threads>` 
+    EX './buffer.o 20 5 5'
 
-#### ScreenShots
+#### Contribution
+Matt Levan 
+    - Primary and final draft of insert\_item() and remove\_item()
+    - README prompt
+Bradley Taniguchi 
+    - First draft of insert\_item() and remove\_item()
+    - git repo
 
-#### Files
-to be added....
+#### Observations
+to be added...
 
 #### Prompt
 Producer Consumer Problem, page 253.

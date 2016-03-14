@@ -72,6 +72,7 @@ int insert_item(int item)
 
     /* Post to full semaphore */
     sem_post(&full);
+    return 0; //false
 }
 
 int remove_item()
@@ -97,6 +98,8 @@ int remove_item()
     
     /* Post to empty semaphore */
     sem_post(&empty);
+
+    return 0; //false
 }
 
 int main(int argc, char *argv[])
