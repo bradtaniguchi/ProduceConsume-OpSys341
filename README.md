@@ -13,7 +13,7 @@ Dr. Bin Tang
     EX './buffer.o 20 5 5'  
 
 #### Contribution
-Matt Levan 
+Matt Levan  
     - Primary and final draft of insert\_item() and remove\_item()  
     - README prompt  
 Bradley Taniguchi   
