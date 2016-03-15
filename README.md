@@ -21,7 +21,9 @@ Bradley Taniguchi
     - git repo  
 
 #### Observations
-to be added...
+    Outputs are still dont in tandume, thus each printout may occur differently  
+    in different order, with definantly different numbers. As the execution of the threads  
+    is still done depending on the OS.  
 
 #### Prompt
 Producer Consumer Problem, page 253.
