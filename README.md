@@ -23,7 +23,11 @@ Bradley Taniguchi
 #### Observations
     Outputs are still dont in tandume, thus each printout may occur differently  
     in different order, with definantly different numbers. As the execution of the threads  
-    is still done depending on the OS.  
+    is still done depending on the OS. But the logic will stay the same, with producers
+    creating randomly generated numbers and consumers only consuming the correct filled
+    places on the buffer. The mutex and semaphore locks will prevent race conditions,
+    with all functions of the program working in tandem.
+ 
 ---
 
 #### Prompt
